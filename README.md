@@ -1,3 +1,3 @@
 # alcodok
 
-[github-pages (https://lebusiness.github.io/alcodok/)](https://lebusiness.github.io/alcodok/)
+[github-pages (https://lebusiness.github.io/alcodok-land/)](https://lebusiness.github.io/alcodok-land/)
