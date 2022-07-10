@@ -1,0 +1,109 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+.faq {
+    padding: $section-padding 0;
+    font-family: 'Cera Pro';
+    &__content {
+        margin-top: $margin-top-content;
+        & > details {
+          padding-top: 0px;
+        }
+        & > details ~ details {
+          padding-top: 20px;
+        }
+    }
+    details {
+        position: relative;
+    }
+    &__question {
+        color: $main-color;
+        color: rgb(28, 79, 161);
+        font-size: $large-text;
+        font-weight: 400;
+        padding: 0px 0 20px 40px;
+        line-height: 1.5;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 22px;
+            padding: 0px 0 20px 35px;
+        } 
+        @media (max-width: map-get($container-max-widths, sm)) {
+            font-size: 18px;
+        } 
+        
+    }
+    &__answer {
+        color: #204790d0;
+        padding-left: 40px;
+        font-size: $small-text;
+        font-weight: 400;
+        line-height: 1.5;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 18px;
+            padding-left: 30px;
+        } 
+        @media (max-width: map-get($container-max-widths, sm)) {
+            font-size: 16px;
+        } 
+    }
+}
+
+
+
+
+
+
+
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   padding: .3em 1.5em .3em .6em;
+   display:inline-block;
+   font-size:1.4em;
+   cursor: pointer;
+   position: relative;
+}
+
+details[open] > summary:before {
+  transform: rotate(45deg);
+}
+summary ~ * {
+   padding:0 1em 0 1em;
+}
+details[open] summary ~ *{ 
+  animation: sweep .3s ease;
+  animation-fill-mode: both;
+}
+@keyframes sweep {
+  0%    {opacity: 0;transform: translate(0px, -10px);}
+  100%  {opacity: 1;transform: translate(10px, 0px)}
+}
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+  summary {
+     display:block;
+     cursor: pointer;
+     position: relative;
+     border-bottom: 2px outset #629dea18;;
+  }
+  :focus {
+    outline: 0;
+  }
+  summary:before {  
+    top: 2.2px;
+    // transform: translateY(-50%);
+    left: .0em;
+    color: transparent;
+    background: url("https://i.ibb.co/5sGhfFD/plus.png");
+    opacity: 0.6;
+    background-size: cover;
+    width: 1.2em;
+    height: 1.2em;  
+    content: "";
+    position: absolute;
+    transition: transform .3s;
+
+  }
+  

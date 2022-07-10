@@ -1,0 +1,170 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+.overlay {
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+    position: fixed;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    z-index: 99999;
+}
+.modal {
+    opacity: 0;
+    transition: 0.3s;
+    position: relative;
+    visibility: hidden;
+    border: 1px solid #2361e858;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 500px;
+    position: fixed;
+    
+    color: white;
+    
+    @media (max-width: map-get($container-max-widths, md)) {
+        width: 95%;
+    } 
+}
+.visible {
+    opacity: 1;
+    visibility: visible !important;
+}
+
+
+
+.modal {
+    // display: none;
+    z-index: 99999;
+    background: rgba(56, 94, 164, 0.981);
+    padding-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Cera Pro';
+
+    &__wrap {
+        padding: 30px 40px 20px 40px;
+        @media (max-width: map-get($container-max-widths, md)) {
+            padding: 20px 20px 20px 20px;
+        } 
+    }
+    &__subtitle {
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 16px;
+        } 
+    }
+    &__title {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 25px;
+        } 
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        
+        input {
+            background:#eff7ff;
+            color: $main-color;
+            font-size: 22px;
+            font-weight: 900;
+            border: none;
+            border-radius: 10px;
+            padding: 30px 60px;
+            @media (max-width: map-get($container-max-widths, md)) {
+                font-size: 18px;
+                padding: 20px 50px;
+            } 
+            &::placeholder{
+                color: #2b236c88;
+                font-size: 22px;
+                font-weight: 700;
+                @media (max-width: map-get($container-max-widths, md)) {
+                    font-size: 18px;
+                } 
+            }
+            
+        }
+        label {
+            color: $main-color;
+            font-weight: 300;
+            font-size: 30px;
+            // margin-top: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            &:nth-child(3) {
+                margin-top: 20px;
+            }
+        }
+        & > .wrap {
+            margin-top: 0px;
+          }
+          & > .wrap  ~ .wrap  {
+            margin-top: 20px;
+          }
+    }
+    .wrap {
+        position: relative;
+        
+        input {
+            width: 100%;
+        }
+        
+    }
+    .inp-img {
+        height: 22px;
+        position: absolute;
+        top: 50%;
+        
+        left: 18px;
+        transform: translateY(-57%);
+        margin-top: 1px;
+    }
+    &__btn {
+        box-shadow: 4px 4px 10px 6px rgba(42, 130, 197, 0.1);
+        border: none !important;
+        margin-top: 30px;
+        font-size: 30px !important;
+        color: white !important;
+        padding: 24px !important;
+        font-weight: 500 !important;
+        background: linear-gradient(90deg, rgb(98, 130, 197) 0%, rgba(129,185,227,1) 100%) !important;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 20px !important;
+            padding: 10px !important;
+            margin-top: 20px;
+        } 
+    }
+    &__img {
+        img {
+            transform: translateY(4.5px);
+            width: 100%;
+        }
+        flex: 0.7;
+        @media (max-width: map-get($container-max-widths, md)) {
+            display: none;
+        } 
+    }
+    
+    &__content {
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+    }
+}

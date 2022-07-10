@@ -1,0 +1,52 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+
+.about {
+    padding: $section-padding 0;
+    font-family: 'Cera Pro';
+    &__container {
+        display: flex;
+        flex-direction: row;
+        @media (max-width: map-get($container-max-widths, lg)) {
+            flex-direction: column;
+        }
+    }
+    &__content {
+        flex: 1;
+        color: $subtitle-color;
+        font-size: $large-text;
+        line-height: 30px;
+        padding: 0 50px 0 50px;
+        line-height: 1.5;
+        @media (max-width: map-get($container-max-widths, xl)) {
+            padding: 0px;
+        }
+        @media (max-width: map-get($container-max-widths, sm)) {
+            font-size: 20px;
+            line-height: 25px;
+        }
+        p {
+            @media (max-width: map-get($container-max-widths, sm)) {
+                margin-top: $margin-top-subtitle;
+                font-size: 16px;
+                margin-bottom: 22px;
+            }
+        }
+    }
+    &__title {
+        text-align: center;
+    }
+    &__img {
+        padding: 70px;
+        padding-bottom: 0;
+        flex: 1;
+        img {
+            width: 100%;
+            box-shadow: 4px 4px 50px 6px rgba(42, 130, 197, 0.4);
+            border-radius: 20px;
+        }
+        @media (max-width: map-get($container-max-widths, lg)) {
+            padding: 10px;
+        }
+    }
+}

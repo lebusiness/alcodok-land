@@ -1,0 +1,115 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+
+.contact {
+    padding: $section-padding 0;
+    padding-bottom: 0;
+    font-family: 'Cera Pro';
+    &__title {
+        margin-bottom: 70px;
+    }
+    &__subtitle {
+        color: $subtitle-color;
+        font-size: 20px;
+        font-weight: 400;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 16px;
+        } 
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        padding: 30px 30px 10px 0;
+        @media (max-width: map-get($container-max-widths, md)) {
+            padding: 30px 0px 30px 0;
+        } 
+        input {
+            background:#eff7ff;
+            color: $main-color;
+            font-size: 20px;
+            font-weight: 900;
+            border: none;
+            border-radius: 10px;
+            padding: 30px 60px;
+            @media (max-width: map-get($container-max-widths, md)) {
+                font-size: 16px;
+            } 
+            &::placeholder{
+                color: #2b236c88;
+                font-size: 20px;
+                font-weight: 700;
+                @media (max-width: map-get($container-max-widths, md)) {
+                    font-size: 16px;
+                } 
+            }
+            
+        }
+        label {
+            color: $main-color;
+            font-weight: 300;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            &:nth-child(3) {
+                margin-top: 20px;
+            }
+        }
+        & > .wrap {
+            margin-top: 0px;
+          }
+          & > .wrap  ~ .wrap  {
+            margin-top: 20px;
+          }
+    }
+    .wrap {
+        position: relative;
+        input {
+            width: 100%;
+        }
+        
+    }
+    
+    .inp-img {
+        height: 22px;
+        position: absolute;
+        top: 50%;
+        
+        left: 18px;
+        transform: translateY(-56%);
+        margin-top: 1px;
+    }
+    &__btn {
+        box-shadow: 4px 4px 10px 6px rgba(42, 130, 197, 0.1);
+        border: none !important;
+        margin-top: 30px;
+        font-size: 26px !important;
+        color: white !important;
+        padding: 20px !important;
+        font-weight: 500 !important;
+        background: linear-gradient(90deg, rgba(66,95,159,1) 0%, rgba(129,185,227,1) 100%) !important;
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 18px !important;
+        } 
+    }
+    &__img {
+        display: flex;
+        align-items: flex-end;
+        img {
+            vertical-align: bottom;
+            width: 100%;
+        }
+        flex: 0.7;
+        @media (max-width: map-get($container-max-widths, md)) {
+            display: none;
+        } 
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        
+    }
+}

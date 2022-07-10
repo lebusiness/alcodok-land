@@ -1,0 +1,28 @@
+
+@use '../abstracts/' as *;
+
+.btn {
+    background: linear-gradient(90deg, rgba(66,95,159,1) 0%, rgba(129,185,227,1) 100%);
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+    box-shadow: 2px 2px 8px 0px rgba(15, 60, 94, 0.2);
+    @media (max-width: map-get($container-max-widths, md)) {
+        font-size: 18px;
+        padding: 16px;
+    }
+    @media (max-width: map-get($container-max-widths, sm)) {
+        font-size: 14px;
+        padding: 12px;
+    }
+    transition: 0.3s;
+}
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 2px 2px 10px 0px rgba(24, 119, 191, 0.4);
+}

@@ -1,0 +1,94 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+.services {
+    background: #f7f9fb;
+    font-family: 'Cera Pro';
+    padding: $section-padding 0;
+    &__subtitle {
+        color: $subtitle-color;
+        font-weight: 400;
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        margin-top: $margin-top-content;
+        @media (max-width: map-get($container-max-widths, xl)) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: map-get($container-max-widths, lg)) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: map-get($container-max-widths, md)) {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+    &__item {
+        position: relative;
+        &-img img {
+            border-radius: 20px;
+            height: 100%;
+            width: 100%;
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+        }
+        &-img::before {
+            border-radius: 20px;
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to bottom,rgba(7,56,93,0.5) 0%,#07385d 92%,#07385d 42%);
+        }
+        .svg-wrapper {
+            padding: 30px;
+            background: white;
+            border-radius: 100%;
+            @media (max-width: map-get($container-max-widths, sm)) {
+                padding: 20px;
+            }
+        }
+        &-content {
+            padding: 30px;
+            width: 100%;
+            z-index: 99;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            svg {
+                margin: auto;
+                height: 63px;
+                width: 67px;
+                fill: $main-color;
+                @media (max-width: map-get($container-max-widths, sm)) {
+                    height: 53px;
+                    width: 57px;
+                }
+            }
+        }
+        &-title {
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 20px;
+            span {
+                border-bottom: 3px solid white;
+                margin-top: 5px;
+                display: inline-block;
+            }
+            @media (max-width: map-get($container-max-widths, sm)) {
+                font-size: 24px;
+            }
+        }
+    }
+}

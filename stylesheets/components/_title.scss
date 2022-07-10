@@ -1,0 +1,31 @@
+@use '../abstracts/' as *;
+.title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-family: 'Cera Pro';
+    color: $main-color;
+    font-size: 34px;
+    font-weight: 700;
+    position: relative;
+    margin: 0;
+    span {
+        // border-bottom: 4px solid $main-color;
+        @media (max-width: map-get($container-max-widths, lg)) {
+            border: none;
+        }
+    }
+    @media (max-width: map-get($container-max-widths, md)) {
+        font-size: 32px;
+    }
+    @media (max-width: map-get($container-max-widths, sm)) {
+        font-size: 26px;
+        letter-spacing: 0px;
+    }
+}
+.subtitle {
+    color: $subtitle-color;
+    font-size: 22px;
+    font-weight: 400;
+    @media (max-width: map-get($container-max-widths, sm)) {
+        font-size: 16px;
+    } 
+}

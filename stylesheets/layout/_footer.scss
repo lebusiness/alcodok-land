@@ -1,0 +1,67 @@
+@use '../abstracts/' as *;
+@use '../base/fonts' as *;
+
+.footer {
+    padding: 28px 0;
+    font-family: 'Cera Pro';
+    background: rgb(75, 106, 173);
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    @media (max-width: map-get($container-max-widths, md)) {
+        padding: 20px 0;
+        font-size: 16px;
+    } 
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        @media (max-width: map-get($container-max-widths, md)) {
+            grid-template-columns: 1fr;
+            gap: 0;
+        } 
+    }
+    &__atr {
+        @media (max-width: map-get($container-max-widths, md)) {
+            justify-self: center;
+        } 
+        & > .footer__item {
+            @media (max-width: map-get($container-max-widths, md)) {
+                margin-top: 0px !important
+            } 
+        }
+        & > .footer__item  ~ .footer__item {
+            @media (max-width: map-get($container-max-widths, md)) {
+                margin-top: 15px !important;
+            } 
+        }
+    }
+    &__numbers {
+        justify-self: right;
+        @media (max-width: map-get($container-max-widths, md)) {
+            justify-self: center;
+        } 
+    }
+    &__items {
+        & > .footer__item {
+            margin-top: 0px;
+            @media (max-width: map-get($container-max-widths, md)) {
+                margin-top: 15px;
+            } 
+        }
+        & > .footer__item  ~ .footer__item {
+            margin-top: 20px;
+            @media (max-width: map-get($container-max-widths, md)) {
+                margin-top: 15px;
+            } 
+        }
+        @media (max-width: map-get($container-max-widths, md)) {
+            justify-self: center;
+        } 
+    }
+    
+}

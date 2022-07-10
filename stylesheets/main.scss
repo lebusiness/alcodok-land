@@ -1,0 +1,49 @@
+@use './abstracts/' as *;
+@use './base/fonts' as *;
+@use './components';
+@use './layout/promo';
+@use './layout/header';
+@use './layout/benefit';
+@use './layout/services';
+@use './layout/about';
+@use './layout/faq';
+@use './layout/feeds';
+@use './layout/contact';
+@use './layout/footer';
+
+* {
+    box-sizing: border-box;
+}
+.contacts-wrapper {
+    position: fixed;
+    z-index: 9;
+    right: 0;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 99999;
+    @media (max-width: map-get($container-max-widths, md)) {
+        bottom: 10px;
+    }
+}
+.pulse {
+    animation: animate_reduce 2s infinite;
+    height: 70px;
+    @media (max-width: map-get($container-max-widths, md)) {
+        height: 40px;
+    }
+}
+ 
+  
+  @keyframes animate_reduce {
+	0% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	50% {
+		transform: scale3d(0.95, 0.95, 0.95);
+	}
+	100% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+}
